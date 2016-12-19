@@ -1,5 +1,7 @@
 # svgs
 
+![](logo.png)
+
 The `svgs` module is compatibility layer between `react-native-svg` and regular
 `react` (browser) based SVG elements. This allows you to write SVG in the react
 and react-native using exactly the same API. Bringing your applications a step
