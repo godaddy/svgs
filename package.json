@@ -1,6 +1,6 @@
 {
   "name": "svgs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "svgs is a compatiblity layer between svg and react-native-svg",
   "scripts": {
     "test": "mocha --require enzyme/withDom --compilers js:babel-register test.js",
