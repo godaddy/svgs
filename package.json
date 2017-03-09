@@ -30,7 +30,6 @@
     "rip-out": "1.0.x"
   },
   "peerDependencies": {
-    "react-native-svg": "4.x.x",
     "react": "15.x.x"
   },
   "devDependencies": {
@@ -42,7 +41,8 @@
     "mocha": "3.1.x",
     "react": "15.x.x",
     "react-addons-test-utils": "15.x.x",
-    "react-dom": "15.4.x"
+    "react-dom": "15.4.x",
+    "react-native-svg": "4.x.x"
   },
   "author": "GoDaddy Operating Company, LLC",
   "contributors": [
