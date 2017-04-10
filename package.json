@@ -2,9 +2,12 @@
   "name": "svgs",
   "version": "2.0.0",
   "description": "svgs is a compatiblity layer between svg and react-native-svg",
+  "main": "./lib",
+  "browser": "./index",
   "scripts": {
     "test": "mocha --require enzyme/withDom --compilers js:babel-register test.js",
-    "lint": "godaddy-js-style-lint index.js index.native.js test.js"
+    "lint": "godaddy-js-style-lint index.js index.native.js test.js",
+    "build": "babel ./index.js -d ./lib"
   },
   "repository": {
     "type": "git",
@@ -24,17 +27,18 @@
     "react"
   ],
   "dependencies": {
-    "babel-preset-es2015": "6.22.x",
-    "babel-preset-react": "6.23.x",
-    "babelify": "7.3.x",
-    "rip-out": "1.0.x"
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^7.3.0",
+    "rip-out": "^1.0.0"
   },
   "peerDependencies": {
     "react": "15.x.x"
   },
   "devDependencies": {
-    "assume": "1.4.x",
-    "babel-register": "6.23.x",
+    "babel-register": "6.24.x",
+    "assume": "^1.5.0",
+    "babel-cli": "^6.24.1",
     "enzyme": "2.7.x",
     "godaddy-style": "3.1.x",
     "jsdom": "9.11.x",
