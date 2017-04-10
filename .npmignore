@@ -31,4 +31,4 @@ node_modules
 *.iml
 
 # Compiled source
-lib
+!lib
