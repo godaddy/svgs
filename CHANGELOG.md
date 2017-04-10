@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 2.1.0
+
+- The package is now published with ES5 compiled code. Except for the `browser`
+  field as that is still used by React-Native so we would want ES6 there.
+
 ### 2.0.0
 
 - The package `react-native-svg` has been removed from the `peerDependencies`.
