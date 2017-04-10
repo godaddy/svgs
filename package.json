@@ -36,17 +36,17 @@
     "react": "15.x.x"
   },
   "devDependencies": {
-    "babel-register": "6.24.x",
     "assume": "^1.5.0",
     "babel-cli": "^6.24.1",
-    "enzyme": "2.7.x",
-    "godaddy-style": "3.1.x",
-    "jsdom": "9.11.x",
-    "mocha": "3.2.x",
-    "react": "15.x.x",
-    "react-addons-test-utils": "15.x.x",
-    "react-dom": "15.4.x",
-    "react-native-svg": "5.x.x"
+    "babel-register": "^6.24.1",
+    "enzyme": "^2.8.0",
+    "godaddy-style": "^4.0.1",
+    "jsdom": "^9.12.0",
+    "mocha": "^3.2.0",
+    "react": "^15.5.3",
+    "react-addons-test-utils": "^15.5.1",
+    "react-dom": "^15.5.3",
+    "react-native-svg": "^5.1.7"
   },
   "author": "GoDaddy Operating Company, LLC",
   "contributors": [
