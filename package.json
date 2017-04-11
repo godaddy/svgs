@@ -7,7 +7,8 @@
   "scripts": {
     "test": "mocha --require enzyme/withDom --compilers js:babel-register test.js",
     "lint": "godaddy-js-style-lint index.js index.native.js test.js",
-    "build": "babel ./index.js -d ./lib"
+    "build": "babel ./index.js -d ./lib",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
