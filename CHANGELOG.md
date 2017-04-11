@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 2.1.1
+
+- Actually run the build during publish so we `npm publish` a version with the
+  compiled code.
+
 ### 2.1.0
 
 - The package is now published with ES5 compiled code. Except for the `browser`
