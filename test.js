@@ -15,6 +15,7 @@ import Svg, {
   Stop,
   Symbol,
   Text,
+  TextPath,
   Use
 } from './';
 
@@ -277,6 +278,18 @@ describe('@ux/svg', function () {
       const name = shallow(<Text />).name();
 
       assume(name).equals('text');
+    });
+  });
+
+  describe('TextPath', function () {
+    it('is exposed as component', function () {
+      assume(TextPath).is.not.a('undefined');
+    });
+
+    it('is a textpath', function () {
+      const name = shallow(<TextPath />).name();
+
+      assume(name).equals('textpath');
     });
   });
 

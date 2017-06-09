@@ -55,6 +55,7 @@ import Svg, {
   Stop,
   Symbol,
   Text,
+  TextPath,
   Use
 } from 'svgs';
 ```
