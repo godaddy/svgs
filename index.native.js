@@ -15,6 +15,7 @@ import Svg, {
   Stop,
   Symbol,
   Text,
+  TextPath,
   Use
 } from 'react-native-svg';
 
@@ -36,6 +37,7 @@ export {
   Svg,
   Symbol,
   Text,
+  TextPath,
   Use
 };
 

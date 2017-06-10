@@ -244,6 +244,17 @@ function Text(props) {
 }
 
 /**
+ * Return a textpath SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} TextPath SVG.
+ * @public
+ */
+function TextPath(props) {
+  return <textpath { ...prepare(props) } />
+}
+
+/**
  * Return a use SVG element.
  *
  * @param {Object} props The properties that are spread on the SVG element.
@@ -275,6 +286,7 @@ export {
   Svg,
   Symbol,
   Text,
+  TextPath,
   Use
 };
 
