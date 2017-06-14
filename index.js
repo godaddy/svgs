@@ -244,6 +244,17 @@ function Text(props) {
 }
 
 /**
+ * Return a tspan SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} TSpan SVG.
+ * @public
+ */
+function TSpan(props) {
+    return <tspan { ...prepare(props) } />
+}
+
+/**
  * Return a textpath SVG element.
  *
  * @param {Object} props The properties that are spread on the SVG element.
@@ -286,6 +297,7 @@ export {
   Svg,
   Symbol,
   Text,
+  TSpan,
   TextPath,
   Use
 };
