@@ -1,6 +1,6 @@
 {
   "name": "svgs",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "svgs is a compatiblity layer between svg and react-native-svg",
   "main": "./lib",
   "browser": "./index",
