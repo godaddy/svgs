@@ -251,7 +251,7 @@ function Text(props) {
  * @public
  */
 function TSpan(props) {
-    return <tspan { ...prepare(props) } />
+  return <tspan { ...prepare(props) } />
 }
 
 /**
