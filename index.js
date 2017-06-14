@@ -240,7 +240,9 @@ function Symbol(props) {
  * @public
  */
 function Text(props) {
-  return <text { ...prepare(props) } />
+    const {x, y, dx, dy, rotate, ...rest} = props;
+    const directAttributes = { x, y, dx, dy, rotate };
+    return <text { ...prepare(rest) } {...directAttributes} />
 }
 
 /**
@@ -251,7 +253,9 @@ function Text(props) {
  * @public
  */
 function TSpan(props) {
-    return <tspan { ...prepare(props) } />
+    const {x, y, dx, dy, rotate, ...rest} = props;
+    const directAttributes = { x, y, dx, dy, rotate };
+    return <tspan { ...prepare(rest) } {...directAttributes} />
 }
 
 /**
