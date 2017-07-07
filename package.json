@@ -3,7 +3,7 @@
   "version": "2.3.0",
   "description": "svgs is a compatiblity layer between svg and react-native-svg",
   "main": "./lib",
-  "browser": "./index",
+  "react-native": "./index",
   "scripts": {
     "test": "mocha --require enzyme/withDom --compilers js:babel-register test.js",
     "lint": "godaddy-js-style-lint index.js index.native.js test.js",
