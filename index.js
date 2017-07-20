@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import rip from 'rip-out';
 
 /**
@@ -27,16 +28,16 @@ function copypaste(from, to, ...props) {
  */
 function prepare(props) {
   const clean = rip(props,
-    'translate', 'scale', 'rotate', 'skewX', 'skewY',
-    'fontFamily', 'fontSize', 'fontWeight', 'fontStyle'
-  );
+        'translate', 'scale', 'rotate', 'skewX', 'skewY',
+        'fontFamily', 'fontSize', 'fontWeight', 'fontStyle'
+    );
 
   const transform = [];
   const style = {};
 
-  //
-  // Correctly apply the transformation properties.
-  //
+    //
+    // Correctly apply the transformation properties.
+    //
   if ('translate' in props) transform.push(`translate(${props.translate})`);
   if ('scale' in props) transform.push(`scale(${props.scale})`);
   if ('rotate' in props) transform.push(`rotate(${props.rotate})`);
@@ -44,12 +45,12 @@ function prepare(props) {
   if ('skewY' in props) transform.push(`skewY(${props.skewY})`);
   if (transform.length) clean.transform = transform.join(' ');
 
-  //
-  // This is the nasty part where we depend on React internals to work as
-  // intended. If we add an empty object as style, it shouldn't render a `style`
-  // attribute. So we can safely conditionally add things to our `style` object
-  // and re-introduce it to our `clean` object
-  //
+    //
+    // This is the nasty part where we depend on React internals to work as
+    // intended. If we add an empty object as style, it shouldn't render a `style`
+    // attribute. So we can safely conditionally add things to our `style` object
+    // and re-introduce it to our `clean` object
+    //
   copypaste(props, style, 'fontFamily', 'fontSize', 'fontWeight', 'fontStyle');
   clean.style = style;
 
@@ -64,7 +65,7 @@ function prepare(props) {
  * @public
  */
 function Circle(props) {
-  return <circle { ...prepare(props) } />
+  return <circle { ...prepare(props) } />;
 }
 
 /**
@@ -75,7 +76,7 @@ function Circle(props) {
  * @public
  */
 function ClipPath(props) {
-  return <clipPath { ...prepare(props) } />
+  return <clipPath { ...prepare(props) } />;
 }
 
 /**
@@ -86,7 +87,7 @@ function ClipPath(props) {
  * @public
  */
 function Defs(props) {
-  return <defs { ...prepare(props) } />
+  return <defs { ...prepare(props) } />;
 }
 
 /**
@@ -97,7 +98,7 @@ function Defs(props) {
  * @public
  */
 function Ellipse(props) {
-  return <ellipse { ...prepare(props) } />
+  return <ellipse { ...prepare(props) } />;
 }
 
 /**
@@ -108,7 +109,7 @@ function Ellipse(props) {
  * @public
  */
 function G(props) {
-  return <g { ...prepare(props) } />
+  return <g { ...prepare(props) } />;
 }
 
 /**
@@ -119,7 +120,7 @@ function G(props) {
  * @public
  */
 function Image(props) {
-  return <image { ...prepare(props) } />
+  return <image { ...prepare(props) } />;
 }
 
 /**
@@ -130,7 +131,7 @@ function Image(props) {
  * @public
  */
 function Line(props) {
-  return <line { ...prepare(props) } />
+  return <line { ...prepare(props) } />;
 }
 
 /**
@@ -141,7 +142,7 @@ function Line(props) {
  * @public
  */
 function LinearGradient(props) {
-  return <linearGradient { ...prepare(props) } />
+  return <linearGradient { ...prepare(props) } />;
 }
 
 /**
@@ -152,7 +153,7 @@ function LinearGradient(props) {
  * @public
  */
 function Path(props) {
-  return <path { ...prepare(props) } />
+  return <path { ...prepare(props) } />;
 }
 
 /**
@@ -163,7 +164,7 @@ function Path(props) {
  * @public
  */
 function Polygon(props) {
-  return <polygon { ...prepare(props) } />
+  return <polygon { ...prepare(props) } />;
 }
 
 /**
@@ -174,7 +175,7 @@ function Polygon(props) {
  * @public
  */
 function Polyline(props) {
-  return <polyline { ...prepare(props) } />
+  return <polyline { ...prepare(props) } />;
 }
 
 /**
@@ -185,7 +186,7 @@ function Polyline(props) {
  * @public
  */
 function RadialGradient(props) {
-  return <radialGradient { ...prepare(props) } />
+  return <radialGradient { ...prepare(props) } />;
 }
 
 /**
@@ -196,7 +197,7 @@ function RadialGradient(props) {
  * @public
  */
 function Rect(props) {
-  return <rect { ...prepare(props) } />
+  return <rect { ...prepare(props) } />;
 }
 
 /**
@@ -207,7 +208,7 @@ function Rect(props) {
  * @public
  */
 function Stop(props) {
-  return <stop { ...prepare(props) } />
+  return <stop { ...prepare(props) } />;
 }
 
 /**
@@ -218,7 +219,7 @@ function Stop(props) {
  * @public
  */
 function Svg(props) {
-  return <svg { ...prepare(props) } />
+  return <svg { ...prepare(props) } />;
 }
 
 /**
@@ -229,34 +230,56 @@ function Svg(props) {
  * @public
  */
 function Symbol(props) {
-  return <symbol { ...prepare(props) } />
+  return <symbol { ...prepare(props) } />;
 }
 
 /**
  * Return a text SVG element.
  *
- * @param {Object} props The properties that are spread on the SVG element.
  * @returns {React.Component} Text SVG.
  * @public
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @param {String} props.x x position
+ * @param {String} props.y y position
+ * @param {String} props.dx delta x
+ * @param {String} props.dy delta y
+ * @param {String} props.rotate rotation
  */
 function Text(props) {
-  const {x, y, dx, dy, rotate, ...rest} = props;
-  const directAttributes = { x, y, dx, dy, rotate };
-  return <text { ...prepare(rest) } {...directAttributes} />
+  const { x, y, dx, dy, rotate, ...rest } = props;
+  return <text { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
+Text.propTypes = {
+  x: PropTypes.string,
+  y: PropTypes.string,
+  dx: PropTypes.string,
+  dy: PropTypes.string,
+  rotate: PropTypes.string
+};
 
 /**
  * Return a tspan SVG element.
  *
- * @param {Object} props The properties that are spread on the SVG element.
  * @returns {React.Component} TSpan SVG.
  * @public
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @param {String} props.x x position
+ * @param {String} props.y y position
+ * @param {String} props.dx delta x
+ * @param {String} props.dy delta y
+ * @param {String} props.rotate rotation
  */
 function TSpan(props) {
-  const {x, y, dx, dy, rotate, ...rest} = props;
-  const directAttributes = { x, y, dx, dy, rotate };
-  return <tspan { ...prepare(rest) } {...directAttributes} />
+  const { x, y, dx, dy, rotate, ...rest } = props;
+  return <tspan { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
+TSpan.propTypes = {
+  x: PropTypes.string,
+  y: PropTypes.string,
+  dx: PropTypes.string,
+  dy: PropTypes.string,
+  rotate: PropTypes.string
+};
 
 /**
  * Return a textpath SVG element.
@@ -266,7 +289,7 @@ function TSpan(props) {
  * @public
  */
 function TextPath(props) {
-  return <textpath { ...prepare(props) } />
+  return <textpath { ...prepare(props) } />;
 }
 
 /**
@@ -277,7 +300,7 @@ function TextPath(props) {
  * @public
  */
 function Use(props) {
-  return <use { ...prepare(props) } />
+  return <use { ...prepare(props) } />;
 }
 
 //
