@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 3.0.0
+
+- `browser` property changed to `reactnative`.
+- Additional babel object spread plugin added.
+
 ### 2.1.1
 
 - Actually run the build during publish so we `npm publish` a version with the
