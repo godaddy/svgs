@@ -35,9 +35,9 @@ function prepare(props) {
   const transform = [];
   const style = {};
 
-    //
-    // Correctly apply the transformation properties.
-    //
+  //
+  // Correctly apply the transformation properties.
+  //
   if ('translate' in props) transform.push(`translate(${props.translate})`);
   if ('scale' in props) transform.push(`scale(${props.scale})`);
   if ('rotate' in props) transform.push(`rotate(${props.rotate})`);
@@ -45,12 +45,12 @@ function prepare(props) {
   if ('skewY' in props) transform.push(`skewY(${props.skewY})`);
   if (transform.length) clean.transform = transform.join(' ');
 
-    //
-    // This is the nasty part where we depend on React internals to work as
-    // intended. If we add an empty object as style, it shouldn't render a `style`
-    // attribute. So we can safely conditionally add things to our `style` object
-    // and re-introduce it to our `clean` object
-    //
+  //
+  // This is the nasty part where we depend on React internals to work as
+  // intended. If we add an empty object as style, it shouldn't render a `style`
+  // attribute. So we can safely conditionally add things to our `style` object
+  // and re-introduce it to our `clean` object
+  //
   copypaste(props, style, 'fontFamily', 'fontSize', 'fontWeight', 'fontStyle');
   clean.style = style;
 
