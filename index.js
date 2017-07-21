@@ -28,9 +28,9 @@ function copypaste(from, to, ...props) {
  */
 function prepare(props) {
   const clean = rip(props,
-        'translate', 'scale', 'rotate', 'skewX', 'skewY',
-        'fontFamily', 'fontSize', 'fontWeight', 'fontStyle'
-    );
+    'translate', 'scale', 'rotate', 'skewX', 'skewY',
+    'fontFamily', 'fontSize', 'fontWeight', 'fontStyle'
+  );
 
   const transform = [];
   const style = {};
