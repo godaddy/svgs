@@ -1,6 +1,14 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import rip from 'rip-out';
+
+//
+// Allow both numbers and strings to represent a value.
+//
+const numb = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.number
+]);
 
 /**
  * Helper function to copy and paste over properties to a different object if
@@ -249,12 +257,13 @@ function Text(props) {
   const { x, y, dx, dy, rotate, ...rest } = props;
   return <text { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
+
 Text.propTypes = {
-  x: PropTypes.string,
-  y: PropTypes.string,
-  dx: PropTypes.string,
-  dy: PropTypes.string,
-  rotate: PropTypes.string
+  x: numb,
+  y: numb,
+  dx: numb,
+  dy: numb,
+  rotate: numb,
 };
 
 /**
@@ -273,13 +282,8 @@ function TSpan(props) {
   const { x, y, dx, dy, rotate, ...rest } = props;
   return <tspan { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
-TSpan.propTypes = {
-  x: PropTypes.string,
-  y: PropTypes.string,
-  dx: PropTypes.string,
-  dy: PropTypes.string,
-  rotate: PropTypes.string
-};
+
+TSpan.propTypes = Text.propTypes;
 
 /**
  * Return a textpath SVG element.
