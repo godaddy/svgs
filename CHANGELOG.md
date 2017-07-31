@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 3.0.1
+
+- 3.0.0 also introduced some `Prop-Type` validation to certain components. It
+  forced `x` and `y` values to be strings. This has now been updated to allow
+  both `string` and `number` values.
+
 ### 3.0.0
 
 - `browser` property changed to `reactnative`.
