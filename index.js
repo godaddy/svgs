@@ -293,7 +293,7 @@ TSpan.propTypes = Text.propTypes;
  * @public
  */
 function TextPath(props) {
-  return <textpath { ...prepare(props) } />;
+  return <textPath { ...prepare(props) } />;
 }
 
 /**
