@@ -286,10 +286,10 @@ describe('@ux/svg', function () {
       assume(TextPath).is.not.a('undefined');
     });
 
-    it('is a textpath', function () {
+    it('is a textPath', function () {
       const name = shallow(<TextPath />).name();
 
-      assume(name).equals('textpath');
+      assume(name).equals('textPath');
     });
   });
 
