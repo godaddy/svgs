@@ -228,20 +228,22 @@ function Stop(props) {
  */
 function Svg(props) {
   const { title, ...rest } = props;
+
   if (title) {
     return (
       <svg role='img' aria-label='[title]' { ...prepare(rest) }>
-        <title>{title}</title>
+        <title>{ title }</title>
         { props.children }
-      </svg>);
+      </svg>
+    );
   }
-  return
-    <svg { ...prepare(rest) } />;
+
+  return <svg { ...prepare(rest) } />;
 }
 
 Svg.propTypes = {
-  title: String,
-  desc: String
+  title: PropTypes.string,
+  desc: PropTypes.string
 };
 
 /**

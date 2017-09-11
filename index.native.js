@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import React from 'react';
 import RNSvg, {
   Circle,
@@ -20,17 +21,18 @@ import RNSvg, {
   TextPath,
   Use
 } from 'react-native-svg';
-import {View} from 'react-native';
 
 const Svg = (props) => {
-  const {title, ...rest} = props;
+  const { title, ...rest } = props;
+
   if (title) {
     return (
-      <View accessible={true} accessibilityLabel={title}>
-         <RNSvg { ...rest} />
-       </View>
-      );
-    }
+      <View accessible={ true } accessibilityLabel={ title }>
+        <RNSvg { ...rest} />
+      </View>
+    );
+  }
+
   return <RNSvg { ...rest} />
 };
 
