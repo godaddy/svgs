@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 3.1.0
+
+- Improved accessibility by supporting titles for SVG elements. See #11
+- Correctly use `textPath` instead of `textpath` as the element names are case
+  sensitive. See #12
+
 ### 3.0.1
 
 - 3.0.0 also introduced some `Prop-Type` validation to certain components. It
