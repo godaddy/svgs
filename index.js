@@ -227,8 +227,22 @@ function Stop(props) {
  * @public
  */
 function Svg(props) {
-  return <svg { ...prepare(props) } />;
+  const { title, ...rest } = props;
+  if (title) {
+    return (
+      <svg role='img' aria-label='[title]' { ...prepare(rest) }>
+        <title>{title}</title>
+        { props.children }
+      </svg>);
+  }
+  return
+    <svg { ...prepare(rest) } />;
 }
+
+Svg.propTypes = {
+  title: String,
+  desc: String
+};
 
 /**
  * Return a symbol SVG element.

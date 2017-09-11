@@ -82,6 +82,22 @@ class Twitter extends Component {
 }
 ```
 
+#### Accessibility
+
+If you want Section 508 Accessibility add the `title` prop to the `<Svg />` component like this:
+```js
+<Svg title="Image Description" width="1000" height="1000" ... />
+```
+When this renders on native, you'll get your SVG wrapped in a View with an accessibilityLabel.
+On web, the SVG element will get two aria labels and a `<title>` element that are
+required for accessibility.
+```html
+<svg role="img" aria-label="[title]" width="1000" height="1000">
+  <title>Image Description</title>
+  ...
+</svg>
+```
+
 ## License
 
 MIT
