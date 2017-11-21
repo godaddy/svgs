@@ -141,6 +141,12 @@ describe('@ux/svg', function () {
 
       assume(props.transform).equals('translate(1, 2)');
     });
+
+    it('does not apply x/y properties as transforms when translate exists', function () {
+      const props = shallow(<G x={ 1 } y= { 2 } translate='5, 6' />).props();
+
+      assume(props.transform).equals('translate(5, 6)');
+    });
   });
 
   describe('Image', function () {
