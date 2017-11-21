@@ -135,6 +135,12 @@ describe('@ux/svg', function () {
 
       assume(name).equals('g');
     });
+
+    it('applies x/y properties as transforms', function () {
+      const props = shallow(<G x={ 1 } y= { 2 } />).props();
+
+      assume(props.transform).equals('translate(1, 2)');
+    });
   });
 
   describe('Image', function () {
