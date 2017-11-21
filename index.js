@@ -117,7 +117,11 @@ function Ellipse(props) {
  * @public
  */
 function G(props) {
-  return <g { ...prepare(props) } />;
+  const { x, y, ...rest } = props;
+  if ((x || y) && !rest.translate) {
+    rest.translate = `${x || 0}, ${y || 0}`;
+  }
+  return <g { ...prepare(rest) } />;
 }
 
 /**
