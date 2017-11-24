@@ -75,6 +75,30 @@ describe('@ux/svg', function () {
       assume(props.style.fontFamily).equals('arial');
       assume(props.style.fontStyle).equals('normal');
     });
+
+    it('preserve a style object', function () {
+      const props = shallow(<Text
+        style={{
+          userSelect: 'none'
+        }}
+      />).props();
+      
+      assume(props.style).is.a('object');
+      assume(props.style.userSelect).equals('none');
+    });
+
+    it('preserve a style object but give bigger priority to font values', function () {
+      const props = shallow(<Text
+        fontSize={ 12 }
+        style={{
+          userSelect: 'none'
+        }}
+      />).props();
+      
+      assume(props.style).is.a('object');
+      assume(props.style.fontSize).equals(12);
+      assume(props.style.userSelect).equals('none');
+    });
   });
 
   describe('Circle', function () {

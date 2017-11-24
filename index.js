@@ -37,11 +37,11 @@ function copypaste(from, to, ...props) {
 function prepare(props) {
   const clean = rip(props,
     'translate', 'scale', 'rotate', 'skewX', 'skewY',
-    'fontFamily', 'fontSize', 'fontWeight', 'fontStyle'
+    'fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
+    'style'
   );
 
   const transform = [];
-  const style = {};
 
   //
   // Correctly apply the transformation properties.
@@ -53,6 +53,11 @@ function prepare(props) {
   if ('skewY' in props) transform.push(`skewY(${props.skewY})`);
   if (transform.length) clean.transform = transform.join(' ');
 
+  //
+  // Correctly set the initial style value.
+  //
+  const style = ('style' in props) ? props.style : {};
+  
   //
   // This is the nasty part where we depend on React internals to work as
   // intended. If we add an empty object as style, it shouldn't render a `style`
