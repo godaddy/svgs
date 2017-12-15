@@ -32,3 +32,4 @@ node_modules
 
 # Compiled source
 lib
+yarn.lock
