@@ -55,6 +55,18 @@ describe('@ux/svg', function () {
       assume(props.transform).equals('skewY(10)');
     });
 
+    it('changes originX to a transform property', function () {
+      const props = shallow(<Path originX={ 10 } />).props();
+
+      assume(props.transform).equals('translate(10, 0) translate(-10, 0)');
+    });
+
+    it('changes originY to a transform property', function () {
+      const props = shallow(<Path originY={ 10 } />).props();
+
+      assume(props.transform).equals('translate(0, 10) translate(0, -10)');
+    });
+
     it('combines multiple props in to a single transform', function () {
       const props = shallow(<Path translate={ '1, 2' } scale={ 1 } />).props();
 
