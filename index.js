@@ -36,7 +36,7 @@ function copypaste(from, to, ...props) {
  */
 function prepare(props) {
   const clean = rip(props,
-    'translate', 'scale', 'rotate', 'skewX', 'skewY',
+    'translate', 'scale', 'rotate', 'skewX', 'skewY', 'originX', 'originY',
     'fontFamily', 'fontSize', 'fontWeight', 'fontStyle',
     'style'
   );
@@ -45,12 +45,16 @@ function prepare(props) {
 
   //
   // Correctly apply the transformation properties.
+  // To apply originX and originY we need to translate the element on those values and
+  // translate them back once the element is scaled, rotated and skewed.
   //
+  if ('originX' in props || 'originY' in props) transform.push(`translate(${props.originX || 0}, ${props.originY || 0})`);
   if ('translate' in props) transform.push(`translate(${props.translate})`);
   if ('scale' in props) transform.push(`scale(${props.scale})`);
   if ('rotate' in props) transform.push(`rotate(${props.rotate})`);
   if ('skewX' in props) transform.push(`skewX(${props.skewX})`);
   if ('skewY' in props) transform.push(`skewY(${props.skewY})`);
+  if ('originX' in props || 'originY' in props) transform.push(`translate(${-props.originX || 0}, ${-props.originY || 0})`);
   if (transform.length) clean.transform = transform.join(' ');
 
   //
