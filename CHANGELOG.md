@@ -1,10 +1,14 @@
 # CHANGELOG
 
+### 3.1.2
+
+- Support `originX` and `originY` as properties. See #13 #18
+
 ### 3.1.1
 
 - Updated `peerDependencies` to include all React versions, not just 15.x.x.
   See #16
-- Correctly transform/translate svg groups (`<G>`) when `x` and `y` properties 
+- Correctly transform/translate svg groups (`<G>`) when `x` and `y` properties
   are added. See #15
 
 ### 3.1.0

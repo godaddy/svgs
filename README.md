@@ -11,6 +11,19 @@ The library itself is written in ES6 and comes with the correct babel
 transforms as dependencies so it's easy to integrate in your existing tool
 chains and webpack builds.
 
+There are 2 ways in using this package, you could use `svgs` instead of
+`react-native-svg` which is recommended. But you could also instruct your
+WebPack builder to use `svgs` as an alias for `react-native-svg`.
+
+## Table of Contents
+
+- [Install](#install)
+- [WebPack](#webpack)
+- [API](#api)
+- [Example](#example)
+- [Accessibility](#accessibility)
+- [License](#license)
+
 ## Install
 
 For regular react usage:
@@ -28,7 +41,22 @@ react-native link react-native-svg
 ```
 
 Word of caution, make sure that you install a `react-native-svg` version that
-works with your `react-native` version.
+works with your `react-native` version. See the [react-native-svg](https://github.com/react-native-community/react-native-svg#notice)
+project for a list of supported React versions.
+
+## WebPack
+
+To use this package as alias for `react-native-svg` you need to update your
+WebPack configuration to include the following snippet:
+
+```
+resolve: {
+  alias: {
+    ...
+    'react-native-svg': 'svgs',
+  }
+}
+```
 
 ## API
 
