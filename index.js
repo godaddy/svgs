@@ -2,9 +2,12 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import rip from 'rip-out';
 
-//
-// Allow both numbers and strings to represent a value.
-//
+/**
+ * PropType specification where a value can be represented as number and string.
+ *
+ * @type {PropTypes}
+ * @private
+ */
 const numb = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.number
@@ -61,7 +64,7 @@ function prepare(props) {
   // Correctly set the initial style value.
   //
   const style = ('style' in props) ? props.style : {};
-  
+
   //
   // This is the nasty part where we depend on React internals to work as
   // intended. If we add an empty object as style, it shouldn't render a `style`
@@ -70,6 +73,15 @@ function prepare(props) {
   //
   copypaste(props, style, 'fontFamily', 'fontSize', 'fontWeight', 'fontStyle');
   clean.style = style;
+
+  //
+  // React-Native svg provides as a default of `xMidYMid` if aspectRatio is not
+  // specified with align information. So we need to support this behavior and
+  // correctly default to `xMidYMid [mode]`.
+  //
+  if ('preserveAspectRatio' in clean && !~clean.preserveAspectRatio.indexOf(' ')) {
+    clean.preserveAspectRatio = 'xMidYMid ' + clean.preserveAspectRatio;
+  }
 
   return clean;
 }
@@ -134,6 +146,17 @@ function G(props) {
 
   return <g { ...prepare(rest) } />;
 }
+
+/**
+ * PropType validation for the <G />.
+ *
+ * @type {Object}
+ * @private
+ */
+G.propTypes = {
+  x: numb,
+  y: numb
+};
 
 /**
  * Return a image SVG element.
@@ -256,9 +279,15 @@ function Svg(props) {
   return <svg { ...prepare(rest) } />;
 }
 
+/**
+ * PropType validation for the <Svg />.
+ *
+ * @type {Object}
+ * @private
+ */
 Svg.propTypes = {
   title: PropTypes.string,
-  desc: PropTypes.string
+  children: PropTypes.any
 };
 
 /**
@@ -286,15 +315,22 @@ function Symbol(props) {
  */
 function Text(props) {
   const { x, y, dx, dy, rotate, ...rest } = props;
+
   return <text { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
 
+/**
+ * PropType validation for the <Text />.
+ *
+ * @type {Object}
+ * @private
+ */
 Text.propTypes = {
   x: numb,
   y: numb,
   dx: numb,
   dy: numb,
-  rotate: numb,
+  rotate: numb
 };
 
 /**
@@ -311,9 +347,16 @@ Text.propTypes = {
  */
 function TSpan(props) {
   const { x, y, dx, dy, rotate, ...rest } = props;
+
   return <tspan { ...prepare(rest) } { ...{ x, y, dx, dy, rotate } } />;
 }
 
+/**
+ * PropType validation for the <TSpan />.
+ *
+ * @type {Object}
+ * @private
+ */
 TSpan.propTypes = Text.propTypes;
 
 /**
