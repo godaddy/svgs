@@ -15,9 +15,10 @@ import Svg, {
   Stop,
   Symbol,
   Text,
+  TSpan,
   TextPath,
   Use
-} from './';
+} from '../index.js';
 
 import { shallow } from 'enzyme';
 import assume from 'assume';
@@ -94,7 +95,7 @@ describe('@ux/svg', function () {
           userSelect: 'none'
         }}
       />).props();
-      
+
       assume(props.style).is.a('object');
       assume(props.style.userSelect).equals('none');
     });
@@ -106,7 +107,7 @@ describe('@ux/svg', function () {
           userSelect: 'none'
         }}
       />).props();
-      
+
       assume(props.style).is.a('object');
       assume(props.style.fontSize).equals(12);
       assume(props.style.userSelect).equals('none');
@@ -303,6 +304,18 @@ describe('@ux/svg', function () {
 
       assume(name).equals('svg');
     });
+
+    it('corrects preserveAspectRatio to have a default alignment', function () {
+      const html = shallow(<Svg preserveAspectRatio="meet" />).html();
+
+      assume(html).to.include('preserveAspectRatio="xMidYMid meet"');
+    });
+
+    it('renders with aria roles when an title is encountered', function () {
+      const html = shallow(<Svg title="accessibility title here" />).html();
+
+      assume(html).to.equal('<svg role="img" aria-label="[title]"><title>accessibility title here</title></svg>');
+    });
   });
 
   describe('Symbol', function () {
@@ -326,6 +339,18 @@ describe('@ux/svg', function () {
       const name = shallow(<Text />).name();
 
       assume(name).equals('text');
+    });
+  });
+
+  describe('TSpan', function () {
+    it('is exposed as component', function () {
+      assume(TSpan).is.not.a('undefined');
+    });
+
+    it('is a tspan', function () {
+      const name = shallow(<TSpan />).name();
+
+      assume(name).equals('tspan');
     });
   });
 

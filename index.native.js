@@ -1,4 +1,5 @@
 import { View } from 'react-native';
+import PropTypes from 'prop-types';
 import React from 'react';
 import RNSvg, {
   Circle,
@@ -22,18 +23,29 @@ import RNSvg, {
   Use
 } from 'react-native-svg';
 
+/**
+ * Return a SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} SVG.
+ * @public
+ */
 const Svg = (props) => {
   const { title, ...rest } = props;
 
   if (title) {
     return (
       <View accessible={ true } accessibilityLabel={ title }>
-        <RNSvg { ...rest} />
+        <RNSvg { ...rest } />
       </View>
     );
   }
 
-  return <RNSvg { ...rest} />
+  return <RNSvg { ...rest } />;
+};
+
+Svg.propTypes = {
+  title: PropTypes.string
 };
 
 export {
