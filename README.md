@@ -129,4 +129,4 @@ required for accessibility.
 
 ## License
 
-MIT
+[MIT](/LICENSE)
