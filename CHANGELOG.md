@@ -1,5 +1,16 @@
 # CHANGELOG
 
+### 3.2.0
+
+- `preserveAspectRatio` now as the same align default of `xMidYMid` when no
+  alignment is given.
+- Moved babel-* dependencies to `devDependencies` and make the assumption
+  that these are installed by developers if they do not want to use our
+  pre-build bundle.
+- Added code coverage and Travis-CI/Coveralls integration.
+- Added missing propType validation in the `index.native.js` file as
+  well as for the `<G />` tag in the browser build.
+
 ### 3.1.2
 
 - Support `originX` and `originY` as properties. See #13 #18
