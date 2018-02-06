@@ -1,5 +1,7 @@
 # svgs
 
+[![Version npm](https://img.shields.io/npm/v/svgs.svg?style=flat-square)](https://www.npmjs.com/package/svgs)[![Build Status](https://img.shields.io/travis/godaddy/svgs/master.svg?style=flat-square)](https://travis-ci.org/godaddy/svgs)[![Dependencies](https://img.shields.io/david/godaddy/svgs.svg?style=flat-square)](https://david-dm.org/godaddy/svgs)[![Coverage Status](https://img.shields.io/coveralls/godaddy/svgs/master.svg?style=flat-square)](https://coveralls.io/r/godaddy/svgs?branch=master)
+
 ![](logo.png)
 
 The `svgs` module is compatibility layer between `react-native-svg` and regular
