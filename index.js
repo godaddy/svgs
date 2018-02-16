@@ -79,8 +79,9 @@ function prepare(props) {
   // specified with align information. So we need to support this behavior and
   // correctly default to `xMidYMid [mode]`.
   //
-  if ('preserveAspectRatio' in clean && !~clean.preserveAspectRatio.indexOf(' ')) {
-    clean.preserveAspectRatio = 'xMidYMid ' + clean.preserveAspectRatio;
+  const preserve = clean.preserveAspectRatio;
+  if (preserve && preserve !== 'none' && !~preserve.indexOf(' ')) {
+    clean.preserveAspectRatio = 'xMidYMid ' + preserve;
   }
 
   return clean;

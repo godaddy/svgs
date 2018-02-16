@@ -311,6 +311,12 @@ describe('@ux/svg', function () {
       assume(html).to.include('preserveAspectRatio="xMidYMid meet"');
     });
 
+    it('correctly supports preserveAspectRatio="none"', function () {
+      const html = shallow(<Svg preserveAspectRatio="none" />).html();
+
+      assume(html).to.include('preserveAspectRatio="none"');
+    });
+
     it('renders with aria roles when an title is encountered', function () {
       const html = shallow(<Svg title="accessibility title here" />).html();
 
