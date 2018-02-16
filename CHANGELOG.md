@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 3.2.1
+
+- Do not prefix `preserveAspectRatio="none"` with `xMidYMid`.
+
 ### 3.2.0
 
 - `preserveAspectRatio` now as the same align default of `xMidYMid` when no
