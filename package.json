@@ -35,7 +35,7 @@
     "assume": "^1.5.0",
     "babel-cli": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "coveralls": "^3.0.0",
@@ -58,15 +58,6 @@
     "Arnout Kazemier"
   ],
   "license": "MIT",
-  "babel": {
-    "plugins": [
-      "transform-object-rest-spread"
-    ],
-    "presets": [
-      "babel-preset-es2015",
-      "babel-preset-react"
-    ]
-  },
   "browserify": {
     "transform": [
       "babelify"
