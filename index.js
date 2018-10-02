@@ -382,6 +382,28 @@ function Use(props) {
   return <use { ...prepare(props) } />;
 }
 
+/**
+ * Return a mask SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} Use SVG.
+ * @public
+ */
+function Mask(props) {
+  return <mask { ...prepare(props) } />;
+}
+
+/**
+ * Return a pattern SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} Use SVG.
+ * @public
+ */
+function Pattern(props) {
+  return <pattern { ...prepare(props) } />;
+}
+
 //
 // Expose everything in the same way as `react-native-svg` is doing.
 //
@@ -394,7 +416,9 @@ export {
   Image,
   Line,
   LinearGradient,
+  Mask,
   Path,
+  Pattern,
   Polygon,
   Polyline,
   RadialGradient,
@@ -402,8 +426,8 @@ export {
   Stop,
   Svg,
   Symbol,
-  Text,
   TSpan,
+  Text,
   TextPath,
   Use
 };

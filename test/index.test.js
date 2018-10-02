@@ -7,15 +7,17 @@ import Svg, {
   Image,
   Line,
   LinearGradient,
+  Mask,
   Path,
+  Pattern,
   Polygon,
   Polyline,
   RadialGradient,
   Rect,
   Stop,
   Symbol,
-  Text,
   TSpan,
+  Text,
   TextPath,
   Use
 } from '../index.js';
@@ -381,6 +383,30 @@ describe('@ux/svg', function () {
       const name = shallow(<Use />).name();
 
       assume(name).equals('use');
+    });
+  });
+
+  describe('Pattern', function () {
+    it('is exposed as component', function () {
+      assume(Pattern).is.not.a('undefined');
+    });
+
+    it('is a mask', function () {
+      const name = shallow(<Pattern id="foo" />).name();
+
+      assume(name).equals('pattern');
+    });
+  });
+
+  describe('Mask', function () {
+    it('is exposed as component', function () {
+      assume(Mask).is.not.a('undefined');
+    });
+
+    it('is a mask', function () {
+      const name = shallow(<Mask id="foo" />).name();
+
+      assume(name).equals('mask');
     });
   });
 });
