@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 3.3.0
+
+- Upgrade to `@babel/7`
+- Added `<Mask />` and `<Pattern />` support
+- Updated devDependencies to latest
+
 ### 3.2.1
 
 - Do not prefix `preserveAspectRatio="none"` with `xMidYMid`.
