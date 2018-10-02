@@ -10,17 +10,19 @@ import RNSvg, {
   Image,
   Line,
   LinearGradient,
+  Mask,
   Path,
+  Pattern,
   Polygon,
   Polyline,
   RadialGradient,
   Rect,
   Stop,
   Symbol,
-  Text,
   TSpan,
+  Text,
   TextPath,
-  Use
+  Use,
 } from 'react-native-svg';
 
 /**
@@ -57,7 +59,9 @@ export {
   Image,
   Line,
   LinearGradient,
+  Mask,
   Path,
+  Pattern,
   Polygon,
   Polyline,
   RadialGradient,
@@ -65,8 +69,8 @@ export {
   Stop,
   Svg,
   Symbol,
-  Text,
   TSpan,
+  Text,
   TextPath,
   Use
 };

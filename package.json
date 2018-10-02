@@ -5,7 +5,7 @@
   "main": "./lib",
   "react-native": "./index",
   "scripts": {
-    "test:web": "mocha --require babel-register --require test/setup.js test/*.test.js",
+    "test:web": "mocha --require setup-env test/*.test.js",
     "test": "nyc --reporter=text --reporter=json-summary npm run test:web",
     "lint": "eslint-godaddy-react index.js index.native.js test.js",
     "build": "rm -rf ./lib && babel ./index.js -d ./lib",
@@ -32,12 +32,13 @@
     "react": "*"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
     "assume": "^1.5.0",
-    "babel-cli": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-register": "^6.26.0",
     "coveralls": "^3.0.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -51,7 +52,8 @@
     "nyc": "^11.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-native-svg": "^6.1.3"
+    "react-native-svg": "^6.1.3",
+    "setup-env": "^1.2.1"
   },
   "author": "GoDaddy Operating Company, LLC",
   "contributors": [
@@ -60,11 +62,11 @@
   "license": "MIT",
   "babel": {
     "plugins": [
-      "transform-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread"
     ],
     "presets": [
-      "babel-preset-es2015",
-      "babel-preset-react"
+      "@babel/preset-env",
+      "@babel/preset-react"
     ]
   },
   "browserify": {
