@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 3.3.1
+
+- Upgrade to Babel 7 was a breaking change, reverting to 6 in this build so
+  3.3.1 no longer breaks people. Will re-release breaking babel upgrade as 4.0
+
 ### 3.3.0
 
 - Upgrade to `@babel/7`

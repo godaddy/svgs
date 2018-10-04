@@ -33,3 +33,9 @@ node_modules
 
 # Compiled source
 !lib
+
+# Don't ship
+
+example
+test
+logo.png
