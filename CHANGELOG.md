@@ -1,5 +1,7 @@
 # CHANGELOG
 
+### 4.0.0
+
 - Upgrade to babel 7
 
 ### 3.3.1
