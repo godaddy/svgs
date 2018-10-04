@@ -1,5 +1,7 @@
 # CHANGELOG
 
+- Upgrade to babel 7
+
 ### 3.3.1
 
 - Upgrade to Babel 7 was a breaking change, reverting to 6 in this build so
