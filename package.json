@@ -77,5 +77,8 @@
     "transform": [
       "babelify"
     ]
+  },
+  "nyc": {
+    "exclude": ["index.d.ts"]
   }
 }
