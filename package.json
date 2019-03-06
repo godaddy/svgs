@@ -6,6 +6,7 @@
   "browser": "./lib",
   "module": "./index",
   "react-native": "./index",
+  "types": "./index.d.ts",
   "scripts": {
     "test:web": "mocha --require setup-env test/*.test.js",
     "test": "nyc --reporter=text --reporter=json-summary npm run test:web",
@@ -31,7 +32,8 @@
     "rip-out": "^1.0.0"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-native-svg": "*"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
