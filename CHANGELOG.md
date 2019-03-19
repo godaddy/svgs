@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 4.1.0
+
+- Added TypeScript definition files.
+
 ### 4.0.0
 
 - Upgrade to babel 7
