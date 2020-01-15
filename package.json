@@ -35,6 +35,11 @@
     "react": "*",
     "react-native-svg": "*"
   },
+  "peerDependenciesMeta": {
+    "react-native-svg": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
@@ -79,6 +84,8 @@
     ]
   },
   "nyc": {
-    "exclude": ["index.d.ts"]
+    "exclude": [
+      "index.d.ts"
+    ]
   }
 }
