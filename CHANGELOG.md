@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 4.1.1
+
+- Added missing `peerDependenciesMeta` to make `react-native-svg` optional.
+
 ### 4.1.0
 
 - Added TypeScript definition files.
