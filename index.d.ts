@@ -21,7 +21,9 @@ export {
   TSpan,
   Text,
   TextPath,
-  Use
+  Use,
+  SvgUri,
+  SvgCssUri
 } from "react-native-svg";
 
 // Export SVG object with enhanced props which includes the title
