@@ -22,7 +22,9 @@ import RNSvg, {
   TSpan,
   Text,
   TextPath,
-  Use
+  Use,
+  SvgUri,
+  SvgCssUri,
 } from 'react-native-svg';
 
 /**
