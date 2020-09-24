@@ -28,7 +28,7 @@
     "react"
   ],
   "dependencies": {
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.2",
     "rip-out": "^1.0.0"
   },
   "peerDependencies": {
