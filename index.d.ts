@@ -5,6 +5,7 @@ export {
   ClipPath,
   Defs,
   Ellipse,
+  ForeignObject,
   G,
   Image,
   Line,
