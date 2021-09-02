@@ -3,6 +3,7 @@ import Svg, {
   ClipPath,
   Defs,
   Ellipse,
+  ForeignObject,
   G,
   Image,
   Line,
@@ -161,6 +162,20 @@ describe('@ux/svg', function () {
       const name = shallow(<Ellipse />).name();
 
       assume(name).equals('ellipse');
+    });
+  });
+
+  describe('ForeignObject', function () {
+    it('is exposed as component', function () {
+      assume(ForeignObject).is.not.a('undefined');
+    });
+
+    it('is a ellipse', function () {
+      const enzyme = shallow(<ForeignObject><div></div></ForeignObject>);
+      const name = enzyme.name();
+
+      assume(name).equals('foreignObject');
+      assume(enzyme.find('div').length).equals(1);
     });
   });
 
