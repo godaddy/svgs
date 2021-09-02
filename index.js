@@ -425,6 +425,28 @@ function Pattern(props) {
   return <pattern { ...prepare(props) } />;
 }
 
+/**
+ * Return an SVG element from Uri.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} Use SVG.
+ * @public
+ */
+function SvgUri({ uri, ...props }) {
+  return <img src={uri} { ...prepare(props) } />;
+}
+
+/**
+ * Return an SVG element from Uri.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} Use SVG.
+ * @public
+ */
+function SvgCssUri({ uri, ...props }) {
+  return <img src={uri} { ...prepare(props) } />;
+}
+
 //
 // Expose everything in the same way as `react-native-svg` is doing.
 //
@@ -451,7 +473,9 @@ export {
   TSpan,
   Text,
   TextPath,
-  Use
+  Use,
+  SvgUri,
+  SvgCssUri
 };
 
 export default Svg;
