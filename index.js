@@ -132,6 +132,17 @@ function Ellipse(props) {
 }
 
 /**
+ * Return a ellipse SVG element.
+ *
+ * @param {Object} props The properties that are spread on the SVG element.
+ * @returns {React.Component} foreignObject SVG.
+ * @public
+ */
+function ForeignObject(props) {
+  return <foreignObject { ...prepare(props) }>{ props.children }</foreignObject>;
+}
+
+/**
  * Return a g SVG element.
  *
  * @param {Object} props The properties that are spread on the SVG element.
@@ -412,6 +423,7 @@ export {
   ClipPath,
   Defs,
   Ellipse,
+  ForeignObject,
   G,
   Image,
   Line,
