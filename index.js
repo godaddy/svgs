@@ -143,6 +143,16 @@ function ForeignObject(props) {
 }
 
 /**
+ * PropType validation for the <ForeignObject />.
+ *
+ * @type {Object}
+ * @private
+ */
+ForeignObject.propTypes = {
+  children: PropTypes.any
+};
+
+/**
  * Return a g SVG element.
  *
  * @param {Object} props The properties that are spread on the SVG element.

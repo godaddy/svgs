@@ -191,13 +191,13 @@ describe('@ux/svg', function () {
     });
 
     it('applies x/y properties as transforms', function () {
-      const props = shallow(<G x={ 1 } y= { 2 } />).props();
+      const props = shallow(<G x={ 1 } y={ 2 } />).props();
 
       assume(props.transform).equals('translate(1, 2)');
     });
 
     it('does not apply x/y properties as transforms when translate exists', function () {
-      const props = shallow(<G x={ 1 } y= { 2 } translate='5, 6' />).props();
+      const props = shallow(<G x={ 1 } y={ 2 } translate='5, 6' />).props();
 
       assume(props.transform).equals('translate(5, 6)');
     });
@@ -323,19 +323,19 @@ describe('@ux/svg', function () {
     });
 
     it('corrects preserveAspectRatio to have a default alignment', function () {
-      const html = shallow(<Svg preserveAspectRatio="meet" />).html();
+      const html = shallow(<Svg preserveAspectRatio='meet' />).html();
 
       assume(html).to.include('preserveAspectRatio="xMidYMid meet"');
     });
 
     it('correctly supports preserveAspectRatio="none"', function () {
-      const html = shallow(<Svg preserveAspectRatio="none" />).html();
+      const html = shallow(<Svg preserveAspectRatio='none' />).html();
 
       assume(html).to.include('preserveAspectRatio="none"');
     });
 
     it('renders with aria roles when an title is encountered', function () {
-      const html = shallow(<Svg title="accessibility title here" />).html();
+      const html = shallow(<Svg title='accessibility title here' />).html();
 
       assume(html).to.equal('<svg role="img" aria-label="[title]"><title>accessibility title here</title></svg>');
     });
@@ -407,7 +407,7 @@ describe('@ux/svg', function () {
     });
 
     it('is a mask', function () {
-      const name = shallow(<Pattern id="foo" />).name();
+      const name = shallow(<Pattern id='foo' />).name();
 
       assume(name).equals('pattern');
     });
@@ -419,7 +419,7 @@ describe('@ux/svg', function () {
     });
 
     it('is a mask', function () {
-      const name = shallow(<Mask id="foo" />).name();
+      const name = shallow(<Mask id='foo' />).name();
 
       assume(name).equals('mask');
     });
