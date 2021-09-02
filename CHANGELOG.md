@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 4.2.0
+
+- Added ForeignObject
+
 ### 4.1.1
 
 - Added missing `peerDependenciesMeta` to make `react-native-svg` optional.
